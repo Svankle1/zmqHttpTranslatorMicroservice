@@ -18,5 +18,8 @@
   "description": "",
   "devDependencies": {
     "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "zeromq": "^6.1.2"
   }
 }
