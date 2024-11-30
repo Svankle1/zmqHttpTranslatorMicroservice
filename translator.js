@@ -1,7 +1,9 @@
-const zmq = require("zeromq")
+const zmq = require("zeromq");
+const fetch = require('node-fetch');
+
 
 async function run() {
-  const sock = new zmq.Reply()
+  const sock = new zmq.Reply();
 
   await sock.bind("tcp://127.0.0.1:3001")
 
@@ -11,7 +13,7 @@ async function run() {
     console.log(order);
 
 
-    await sock.send('Responding to: ' + msg.toString())
+    await sock.send('Responding to: ' + msg.toString());
   }
 }
 
