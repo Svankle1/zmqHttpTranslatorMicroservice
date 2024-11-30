@@ -1,0 +1,19 @@
+{
+  "name": "zmq-to-http",
+  "version": "1.0.0",
+  "main": "translator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Svankle1/zmqHttpTranslatorMicroservice.git"
+  },
+  "author": "Seth V",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Svankle1/zmqHttpTranslatorMicroservice/issues"
+  },
+  "homepage": "https://github.com/Svankle1/zmqHttpTranslatorMicroservice#readme",
+  "description": ""
+}
