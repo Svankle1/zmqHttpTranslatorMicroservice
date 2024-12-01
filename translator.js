@@ -22,10 +22,24 @@ async function run() {
     if (order.body)
         options.body = JSON.stringify(order.body);
 
-    let data = sendRequest(order.url, options);
-    console.log(data);
+    let resp = (async() =>{
+      try {
+        //Make web request for data
+        //console.log(url);
+        let response = await fetch(order.url);
+    
+        //Convert response data to json
+        let returnedData = await response.json();
+        console.log(returnedData);
 
-    await sock.send(JSON.stringify(data));
+        //Now use json data  
+        await sock.send(JSON.stringify(returnedData));
+    
+      } catch (error) {
+        console.log(error +" err");
+
+        await sock.send(JSON.stringify({ERR_CODE:error}));
+      }})();
   }
 }
 
