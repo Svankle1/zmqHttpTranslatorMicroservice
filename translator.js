@@ -15,18 +15,17 @@ async function run() {
     console.log(order);
 
     const options = {
-        method: order.method
+        method: order.method,
         //body: JSON.stringify(body),
-        //headers: {'Content-Type': 'application/json'}
+        headers: {'Content-Type': 'application/json'}
     }
     if (order.body)
         options.body = JSON.stringify(order.body);
-
     let resp = (async() =>{
       try {
         //Make web request for data
         //console.log(url);
-        let response = await fetch(order.url);
+        let response = await fetch(order.url, options);
     
         //Convert response data to json
         let returnedData = await response.json();
@@ -45,10 +44,10 @@ async function run() {
 
 run()
 
-async function sendRequest(url, options) {
-    const body = {"message": "This is a message from CS361"};
+// async function sendRequest(url, options) {
+//     const body = {"message": "This is a message from CS361"};
   
-    const response = await fetch(url, options);
-    const data = await response.json();
-    return data;
-  }
+//     const response = await fetch(url, options);
+//     const data = await response.json();
+//     return data;
+//   }
